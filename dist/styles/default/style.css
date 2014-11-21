@@ -1,0 +1,90 @@
+body, code{
+    font-family:"新細明體","微軟正黑體","sans-serif","arial","helvetica","clean";
+    font-size:16px;
+    font-weight:bold;
+}
+pre {
+    font-family:"細明體";
+    font-size:16px;
+}
+body {
+    margin: 20px;
+    padding:0px;
+    background:#e8e8e8;
+}
+.show_code {
+    border:3px double #999999;
+    margin:5px;
+}
+a, a:link,a:visited,a:active {
+    color:#56789A;
+    text-decoration: none;
+}
+a:hover {
+    color:#FFFFFF;
+    text-decoration: none;
+}
+img {
+    border:1px solid #000000;
+    /* IE6 */
+    behavior: url(../_framework/js/iepngfix/iepngfix.htc);
+}
+img.disabled{
+    filter:alpha(opacity=50);
+    -moz-opacity:.50;
+    opacity:.50;
+}
+br {
+    clear: left;
+}
+/*  --------------------------------------------------------------------------------------  */
+/*  做為一個段落  */
+/*  --------------------------------------------------------------------------------------  */
+p {
+    margin:0px;
+    padding:10px 0 0 0;
+    clear:both;
+}
+/*  --------------------------------------------------------------------------------------  */
+/*  ----------   breadcrumb   ------------------------------------------------------------  */
+/*  --------------------------------------------------------------------------------------  */
+.custom-breadcrumb {
+    font: 11px Arial, Helvetica, sans-serif;
+    background-image:url('imgs/bc_bg.png');
+    background-repeat:repeat-x;
+    height:30px;
+    line-height:30px;
+    color:#9b9b9b;
+    border:solid 1px #cacaca;
+    width:100%;
+    overflow:hidden;
+    margin:0px;
+    padding:0px;
+}
+.custom-breadcrumb li {
+    list-style-type:none;
+    float:left;
+    padding-left:10px;
+}
+.custom-breadcrumb li .focus{
+    color:#1122cc;
+    font-weight:bold;
+}
+.custom-breadcrumb a {
+    height:30px;
+    background-image:url('imgs/bc_separator.png');
+    background-repeat:no-repeat;
+    background-position:right;
+    padding-right: 15px;
+    text-decoration: none;
+    color:#454545;
+    /* display:block; */
+    display:inline-table;
+}
+.home {
+    border: none;
+    margin: 8px 0px;
+}
+.custom-breadcrumb a:hover {
+    color:#35acc5;
+}

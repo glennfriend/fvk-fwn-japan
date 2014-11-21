@@ -1,0 +1,492 @@
+<script language="JavaScript">
+var ol_textfont = "Fixedsys,·s²Ó©úÅé";
+</script>
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<!-- <div id='overDiv' style='position:absolute; visibility:hidden; FILTER: Alpha(opacity=80)'></div> -->
+<script langauge="JavaScript" src="overlib_mini.js"></script>
+
+
+<a href="javascript:void(0);" onmouseover="return overlib('This is an ordinary popup.');" onmouseout="return nd();">here</a><br>
+
+
+<a href="javascript:void(0);" onmouseover="return overlib('This is what we call a sticky, since I stick around.', STICKY);" onmouseout="return nd();">here</a><br>
+
+
+<a href="javascript:void(0);" onclick="return overlib('This is a sticky with a caption. And it is centered under the mouse!', STICKY, CAPTION, 'Sticky!', CENTER);" onmouseout="nd();">Click here!</a><br>
+
+
+
+<a href="javascript:void(0);" onmouseover="return overlib('Different font.', TEXTFONT, 'Courier, Courier New');" onmouseout="return nd();">My link</a><br>
+
+
+<a href="javascript:void(0);" onmouseover="return overlib('Number of pixels wide the popup should be.', CAPTION, 'Parameter pixels');" onmouseout="return nd();">pixels</a><br>
+
+
+<a href="javascript:void(0);" onmouseover="return overlib('We lock this one to position a specific position.', FIXX, 80, FIXY, 350)" onmouseout="return nd();">fixating the position</a><br>
+
+
+<a href="javascript:void(0);" onmouseover="return overlib('For example, a list:<UL><LI>Item 1<LI>Item 2<LI>Item 3</UL>');" onmouseout="return nd();">html</a><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="800" cellpadding="0" cellspacing="20">
+<tr>
+<td width="70" valign="top" align="right" class="mainmenu"><a href="./"><img src="cmn/logo.gif" border="0" width="26" height="113"></a><br><br><b>contents</b><br><a href="./" class="mainmenu" onmouseover="return overlib('Back to the overLIB homepage.');" onmouseout="return nd();">home</a><br><a href="docs.html" class="mainmenu" onmouseover="return overlib('overLIB\'s documentation.');" onmouseout="return nd();">manual</a><br><a href="./#Articles and Information" class="mainmenu" onmouseover="return overlib('History, feature shows, examples and more.');" onmouseout="return nd();">articles</a><br><a href="support.html" class="mainmenu" onmouseover="return overlib('Information how you can get help.');" onmouseout="return nd();">support</a><br><br><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="erik@bosrup.com"><input type="hidden" name="item_name" value="overLIB Donation"><input type="hidden" name="no_shipping" value="1"><input type="hidden" name="return" value="http://www.bosrup.com/web/overlib/thankyou.html"><input type="hidden" name="cn" value="Feature request"><input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"></form>
+</td>
+<td width="534" valign="top">
+<table width="100%" cellpadding="0" cellspacing="1">
+<tr><td class="title">Command reference</td></tr>
+<tr><td class="author">By Erik Bosrup</td></tr>
+<tr><td class="author"><br></td></tr>
+</table>
+<table width="100%" cellpadding="1" cellspacing="2">
+<tr>
+<td class="sectiontitle" valign="top">1.</td>
+<td valign="top">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><a name="Introduction">Introduction</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td>
+			This command reference lists the commands you can use to control overLIB. There are multiple ways
+			to customize overLIB and using commands all the time is NOT the correct way of doing this. Read the
+			<a href="docs.html" onmouseover="return overlib('Read this, or you won\'t understand the following.');" onmouseout="return nd();">documentation</a> for more information about other ways to customize overLIB.
+			<br><br>
+			Remeber that commands are always in uppercase (case-sensitive) and can have none or many parameters.
+		</td></tr>
+</table><br></td>
+</tr>
+<tr>
+<td class="sectiontitle" valign="top">2.</td>
+<td valign="top">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><a name="Behaviour, Positioning and Sizes">Behaviour, Positioning and Sizes</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td><br><b>STICKY</b><br>
+					Makes the popup stick around until closed.
+				<br>
+		Variable: ol_sticky.
+		<br><br><b>WIDTH</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels wide the popup should be.', CAPTION, 'Parameter pixels');" onmouseout="return nd();">pixels</a></i><br>
+					Sets the width of the box to some other size.
+				<br>
+		Variable: ol_width.
+		<br><br><b>HEIGHT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels heigh the popup should be.', CAPTION, 'Parameter pixels');" onmouseout="return nd();">pixels</a></i><br>
+					Sets the height of the box.
+				<br>
+		Variable: ol_height.
+		<br><br><b>LEFT</b><br>
+					Makes the popups go to the left of the mouse.
+				<br>
+		Variable: ol_hpos.
+		<br><br><b>RIGHT</b><br>
+					Makes the popups go to the right of the mouse.
+				<br>
+		Variable: ol_hpos.
+		<br><br><b>CENTER</b><br>
+					Makes the popups go to the center of the mouse.
+				<br>
+		Variable: ol_hpos.
+		<br><br><b>ABOVE</b><br>
+					Makes the popups go above the mouse.
+					Note: Only possible when HEIGHT has been set.
+				<br>
+		Variable: ol_vpos.
+		<br><br><b>BELOW</b><br>
+					Makes the popups go below the mouse.
+				<br>
+		Variable: ol_vpos.
+		<br><br><b>OFFSETX</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels.', CAPTION, 'Parameter x');" onmouseout="return nd();">x</a></i><br>
+					How far away from the pointer the popup will show up, horizontally.
+				<br>
+		Variable: ol_offsetx.
+		<br><br><b>OFFSETY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels.', CAPTION, 'Parameter y');" onmouseout="return nd();">y</a></i><br>
+					How far away from the pointer the popup will show up, vertically.
+				<br>
+		Variable: ol_offsety.
+		<br><br><b>AUTOSTATUS</b><br>
+					Sets the status bar's text to the popup's text.
+					Overrides STATUS.
+				<br>
+		Variable: ol_autostatus.
+		<br><br><b>AUTOSTATUSCAP</b><br>
+					Sets the status bar's text to the popup's caption.
+					Overrides AUTOSTATUS and STATUS.
+				<br>
+		Variable: ol_autostatus.
+		<br><br><b>SNAPX</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels.', CAPTION, 'Parameter grid');" onmouseout="return nd();">grid</a></i><br>
+					Snaps the popup to an even position in a horizontal grid.
+				<br>
+		Variable: ol_snapx.
+		<br><br><b>SNAPY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels.', CAPTION, 'Parameter grid');" onmouseout="return nd();">grid</a></i><br>
+					Snaps the popup to an even position in a vertical grid.
+				<br>
+		Variable: ol_snapy.
+		<br><br><b>FIXX</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Pixels from left side.', CAPTION, 'Parameter position');" onmouseout="return nd();">position</a></i><br>
+					Locks the popups horizontal position.
+					Overrides all other horizontal placement.
+				<br>
+		Variable: ol_fixx.
+		<br><br><b>FIXY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Pixels from top.', CAPTION, 'Parameter position');" onmouseout="return nd();">position</a></i><br>
+					Locks the popups vertical position.
+					Overrides all other vertical placement.
+				<br>
+		Variable: ol_fixy.
+		<br><br><b>FRAME</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Frame (not text).', CAPTION, 'Parameter frame');" onmouseout="return nd();">frame</a></i><br>
+					Controls popups in a different frame. Make sure you have the &lt;DIV&gt; tag in the target frame as well. The frame parameter passed to this command should not be a text string.
+					This feature, although working well, is considered experimental.
+					Example: overlib('Text', FRAME, parent.below), assuming you have a frame called below.
+				<br>
+		Variable: ol_frame.
+		<br><br><b>TIMEOUT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Time to wait.', CAPTION, 'Parameter millisecs');" onmouseout="return nd();">millisecs</a></i><br>
+					Makes the popup go away after the requested delay.
+				<br>
+		Variable: ol_timeout.
+		<br><br><b>DELAY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Time to wait.', CAPTION, 'Parameter millisecs');" onmouseout="return nd();">millisecs</a></i><br>
+					Makes that popup behave like a tooltip. It will popup only after a certain delay specified in millisecs.
+				<br>
+		Variable: ol_delay.
+		<br><br><b>HAUTO</b><br>
+					Automatically determine if the popup should be to the left or right of the mouse.
+					This command toggles the feature on or off.
+				<br>
+		Variable: ol_hauto.
+		<br><br><b>VAUTO</b><br>
+					Automatically determine if the popup should be to the above or below of the mouse.
+					This command toggles the feature on or off.
+				<br>
+		Variable: ol_vauto.
+		<br><br><b>CLOSECLICK</b><br>
+					Force users to click on "Close" to close sticky popups. This command toggles the feature on and off.
+				<br>
+		Variable: ol_closeclick.
+		<br></td></tr>
+</table><br></td>
+</tr>
+<tr>
+<td class="sectiontitle" valign="top">3.</td>
+<td valign="top">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><a name="Colors, Fonts and Images">Colors, Fonts and Images</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td><br><b>FGCOLOR</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Hex code or color name.', CAPTION, 'Parameter color');" onmouseout="return nd();">color</a></i><br>
+					Color of the inside of the popup box.
+				<br>
+		Variable: ol_fgcolor.
+		<br><br><b>BGCOLOR</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Hex code or color name.', CAPTION, 'Parameter color');" onmouseout="return nd();">color</a></i><br>
+					Color of the border of the popup box.
+				<br>
+		Variable: ol_bgcolor.
+		<br><br><b>TEXTCOLOR</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Hex code or color name.', CAPTION, 'Parameter color');" onmouseout="return nd();">color</a></i><br>
+					Sets the color of the text inside the box.
+				<br>
+		Variable: ol_textcolor.
+		<br><br><b>CAPCOLOR</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Hex code or color name.', CAPTION, 'Parameter color');" onmouseout="return nd();">color</a></i><br>
+					Sets the color of the box's caption.
+				<br>
+		Variable: ol_capcolor.
+		<br><br><b>CLOSECOLOR</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Hex code or color name.', CAPTION, 'Parameter color');" onmouseout="return nd();">color</a></i><br>
+					Sets the color of the close text.
+				<br>
+		Variable: ol_closecolor.
+		<br><br><b>TEXTFONT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Names of fonts to use.', CAPTION, 'Parameter font');" onmouseout="return nd();">font</a></i><br>
+					Sets the font to be used by the main text.
+				<br>
+		Variable: ol_textfont.
+		<br><br><b>CAPTIONFONT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Names of fonts to use.', CAPTION, 'Parameter font');" onmouseout="return nd();">font</a></i><br>
+					Sets the font of the caption.
+				<br>
+		Variable: ol_capfont.
+		<br><br><b>CLOSEFONT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Names of fonts to use.', CAPTION, 'Parameter font');" onmouseout="return nd();">font</a></i><br>
+					Defines the font for the "Close" text.
+				<br>
+		Variable: ol_closefont.
+		<br><br><b>TEXTSIZE</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Integer for the font size.', CAPTION, 'Parameter size');" onmouseout="return nd();">size</a></i><br>
+					Size of the main text's font.
+				<br>
+		Variable: ol_textsize.
+		<br><br><b>CAPTIONSIZE</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Integer for the font size.', CAPTION, 'Parameter size');" onmouseout="return nd();">size</a></i><br>
+					Size of the caption's font.
+				<br>
+		Variable: ol_captionsize.
+		<br><br><b>CLOSESIZE</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Integer for the font size.', CAPTION, 'Parameter size');" onmouseout="return nd();">size</a></i><br>
+					Size of the "Close" text's font.
+				<br>
+		Variable: ol_closesize.
+		<br><br><b>FGBACKGROUND</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Url to the image.', CAPTION, 'Parameter picture');" onmouseout="return nd();">picture</a></i><br>
+					Defines a picture to use instead of color for the inside of the popup.
+					You will most likely want to set FGCOLOR to '' or the color will show as well.
+				<br>
+		Variable: ol_fgbackground.
+		<br><br><b>BGBACKGROUND</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Url to the image.', CAPTION, 'Parameter picture');" onmouseout="return nd();">picture</a></i><br>
+					Defines a picture to use instead of color for the border of the popup.
+					You will most likely want to set BGCOLOR to '' or the color will show as well.
+					When having a Close link, Netscape will re-render the table cells, making things look bad.
+				<br>
+		Variable: ol_bgbackground.
+		<br><br><b>CAPICON</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Url for the image.', CAPTION, 'Parameter url');" onmouseout="return nd();">url</a></i><br>
+					Displays a small icon before the popup caption.
+				<br>
+		Variable: ol_capicon.
+		<br><br><b>BORDER</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Number of pixels.', CAPTION, 'Parameter pixels');" onmouseout="return nd();">pixels</a></i><br>
+					Makes the border of the popups thicker or thinner.
+				<br>
+		Variable: ol_border.
+		<br><br><b>BACKGROUND</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Url for image.', CAPTION, 'Parameter picture');" onmouseout="return nd();">picture</a></i><br>
+					Instead of using the table box as background, your picture will be used.
+				<br>
+		Variable: ol_background.
+		<br><br><b>PADX</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Pixels to pad.', CAPTION, 'Parameter left');" onmouseout="return nd();">left</a></i><i> <a href="javascript:void(0);" onmouseover="return overlib('Pixels to pad.', CAPTION, 'Parameter right');" onmouseout="return nd();">right</a></i><br>
+					Pads the background picture with horizontal whitespace for text placement.
+					Note that this is a two parameter command.
+				<br>
+		Variable: ol_padxl and ol_padxr.
+		<br><br><b>PADY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Pixels to pad.', CAPTION, 'Parameter top');" onmouseout="return nd();">top</a></i><i> <a href="javascript:void(0);" onmouseover="return overlib('Pixels to pad.', CAPTION, 'Parameter bottom');" onmouseout="return nd();">bottom</a></i><br>
+					Pads the background picture with vertical whitespace for text placement.
+					Note that this is a two parameter command.
+				<br>
+		Variable: ol_padyt and ol_padyb.
+		<br><br><b>FULLHTML</b><br>
+					Allows you to control the html over a BACKGROUND picture completely. The html code is expected in "text".
+				<br>
+		Variable: ol_fullhtml.
+		<br></td></tr>
+</table><br></td>
+</tr>
+<tr>
+<td class="sectiontitle" valign="top">4.</td>
+<td valign="top">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><a name="Cascading Style Sheets">Cascading Style Sheets</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td><br><b>CSSOFF</b><br>
+					Turns off CSS features and resorts to standard html tags.
+				<br>
+		Variable: ol_css.
+		<br><br><b>CSSSTYLE</b><br>
+					Turns on inline CSS style features.
+				<br>
+		Variable: ol_css.
+		<br><br><b>CSSCLASS</b><br>
+					Turns on CSS class features.
+				<br>
+		Variable: ol_css.
+		<br><table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><br><a name="Class commands">Class commands</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td><br><b>FGCLASS</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS class', CAPTION, 'Parameter class');" onmouseout="return nd();">class</a></i><br>
+					Class for the inside table of the popup box.
+					Requires CSSCLASS.
+				<br>
+		Variable: ol_fgclass.
+		<br><br><b>BGCLASS</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS class', CAPTION, 'Parameter class');" onmouseout="return nd();">class</a></i><br>
+					Class for the outside table of the popup box.
+					Requires CSSCLASS.
+				<br>
+		Variable: ol_bgclass.
+		<br><br><b>TEXTFONTCLASS</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS class', CAPTION, 'Parameter class');" onmouseout="return nd();">class</a></i><br>
+					Class for the main text area.
+					Requires CSSCLASS.
+				<br>
+		Variable: ol_textfontclass.
+		<br><br><b>CAPTIONFONTCLASS</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS class', CAPTION, 'Parameter class');" onmouseout="return nd();">class</a></i><br>
+					Class for the caption text.
+					Requires CSSCLASS.
+				<br>
+		Variable: ol_captionfontclass.
+		<br><br><b>CLOSEFONTCLASS</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS class', CAPTION, 'Parameter class');" onmouseout="return nd();">class</a></i><br>
+					Class for the close tex.
+					Requires CSSCLASS.
+				<br>
+		Variable: ol_closefontclass.
+		<br></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><br><a name="Style commands">Style commands</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td><br><b>PADUNIT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS unit', CAPTION, 'Parameter unit');" onmouseout="return nd();">unit</a></i><br>
+					The unit to be used for table cell padding.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_padunit.
+		<br><br><b>HEIGHTUNIT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS unit', CAPTION, 'Parameter unit');" onmouseout="return nd();">unit</a></i><br>
+					The unit to be used for table heights.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_heighunit.
+		<br><br><b>WIDTHUNIT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS unit', CAPTION, 'Parameter unit');" onmouseout="return nd();">unit</a></i><br>
+					The unit to be used for table widths.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_widthunit.
+		<br><br><b>TEXTSIZEUNIT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS unit', CAPTION, 'Parameter unit');" onmouseout="return nd();">unit</a></i><br>
+					The unit to be used when specifying text sizes.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_textsizeunit.
+		<br><br><b>TEXTDECORATION</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS decoration name.', CAPTION, 'Parameter decoration');" onmouseout="return nd();">decoration</a></i><br>
+					Decorates the text with underlines etc.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_textdecoration.
+		<br><br><b>TEXTSTYLE</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS style to use.', CAPTION, 'Parameter style');" onmouseout="return nd();">style</a></i><br>
+					Styles the text with italics etc.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_textstyle.
+		<br><br><b>TEXTWEIGHT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS weight to use.', CAPTION, 'Parameter weight');" onmouseout="return nd();">weight</a></i><br>
+					Weights the text in different ways.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_textweight.
+		<br><br><b>CAPTIONSIZEUNIT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS unit', CAPTION, 'Parameter unit');" onmouseout="return nd();">unit</a></i><br>
+					The unit to be used when specifying caption text sizes.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_captionsizeunit.
+		<br><br><b>CAPTIONDECORATION</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS decoration name.', CAPTION, 'Parameter decoration');" onmouseout="return nd();">decoration</a></i><br>
+					Decorates the caption text with underlines etc.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_captiondecoration.
+		<br><br><b>CAPTIONSTYLE</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS style to use.', CAPTION, 'Parameter style');" onmouseout="return nd();">style</a></i><br>
+					Styles the caption text with italics etc.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_captionstyle.
+		<br><br><b>CAPTIONWEIGHT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS weight to use.', CAPTION, 'Parameter weight');" onmouseout="return nd();">weight</a></i><br>
+					Weights the caption text in different ways.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_captionweight.
+		<br><br><b>CLOSESIZEUNIT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS unit', CAPTION, 'Parameter unit');" onmouseout="return nd();">unit</a></i><br>
+					The unit to be used when specifying close text sizes.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_closesizeunit.
+		<br><br><b>CLOSEDECORATION</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS decoration name.', CAPTION, 'Parameter decoration');" onmouseout="return nd();">decoration</a></i><br>
+					Decorates the close text with underlines etc.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_closedecoration.
+		<br><br><b>CLOSESTYLE</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS style to use.', CAPTION, 'Parameter style');" onmouseout="return nd();">style</a></i><br>
+					Styles the close text with italics etc.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_closestyle.
+		<br><br><b>CLOSEWEIGHT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('CSS weight to use.', CAPTION, 'Parameter weight');" onmouseout="return nd();">weight</a></i><br>
+					Weights the close text in different ways.
+					Requires CSSSTYLE.
+				<br>
+		Variable: ol_closeweight.
+		<br></td></tr>
+</table>
+</td></tr>
+</table><br></td>
+</tr>
+<tr>
+<td class="sectiontitle" valign="top">5.</td>
+<td valign="top">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="sectiontitle"><a name="Miscellaneous">Miscellaneous</a></td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="10">
+<tr><td><br><b>CAPTION</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Caption text.', CAPTION, 'Parameter title');" onmouseout="return nd();">title</a></i><br>
+					Sets the caption of the popup.
+				<br>
+		Variable: ol_cap.
+		<br><br><b>CLOSETEXT</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Text to show.', CAPTION, 'Parameter text');" onmouseout="return nd();">text</a></i><br>
+					Replaces the text "Close" with something else.
+				<br>
+		Variable: ol_close.
+		<br><br><b>NOCLOSE</b><br>
+					Doesn't display the text "Close" on stickies with caption.
+				<br>
+		Variable: ol_close.
+		<br><br><b>INARRAY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Position in array.', CAPTION, 'Parameter id');" onmouseout="return nd();">id</a></i><br>
+					Tells overLIB to read the text from the ol_texts array, located in overlib.js (or on page).
+					This parameter can be used instead of text.
+					Example: overlib(INARRAY, 1);
+				<br>
+		Variable: ol_texts.
+		<br><br><b>CAPARRAY</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Position in array.', CAPTION, 'Parameter id');" onmouseout="return nd();">id</a></i><br>
+					Tells overLIB to read the caption from the ol_caps array.
+				<br>
+		Variable: ol_caps.
+		<br><br><b>FUNCTION</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Function to call.', CAPTION, 'Parameter functionname');" onmouseout="return nd();">functionname</a></i><br>
+					Calls the specified function and takes the return value as the text that should be displayed in the popup.
+					The function is called when the overLIB command parser runs.
+				<br>
+		Variable: ol_function.
+		<br><br><b>STATUS</b><i> <a href="javascript:void(0);" onmouseover="return overlib('Text to show.', CAPTION, 'Parameter text');" onmouseout="return nd();">text</a></i><br>
+					Sets the text in the browsers status bar to text.
+				<br>
+		Variable: ol_status.
+		<br></td></tr>
+</table><br></td>
+</tr>
+</table>
+</td>
+<td width="156" valign="top"><br><br><br><br><table width="156" cellpadding="0" cellspacing="0">
+<tr><td colspan="4" class="snip"><b>On this page</b></td></tr>
+<tr>
+<td width="2"><img src="cmn/empty.gif" border="0" width="2" height="2"></td>
+<td width="1" bgcolor="#333333"><img src="cmn/empty.gif" border="0" width="1" height="1"></td>
+<td width="3"><img src="cmn/empty.gif" border="0" width="2" height="2"></td>
+<td width="150" class="snip"><a href="#Introduction" class="snip" onmouseover="return overlib('Jump to this section.');" onmouseout="return nd();">Introduction</a><br><a href="#Behaviour, Positioning and Sizes" class="snip" onmouseover="return overlib('Jump to this section.');" onmouseout="return nd();">Behaviour, Positioning and Sizes</a><br><a href="#Colors, Fonts and Images" class="snip" onmouseover="return overlib('Jump to this section.');" onmouseout="return nd();">Colors, Fonts and Images</a><br><a href="#Cascading Style Sheets" class="snip" onmouseover="return overlib('Jump to this section.');" onmouseout="return nd();">Cascading Style Sheets</a><br><a href="#Miscellaneous" class="snip" onmouseover="return overlib('Jump to this section.');" onmouseout="return nd();">Miscellaneous</a><br></td>
+</tr>
+</table><br><br><table width="156" cellpadding="0" cellspacing="0">
+<tr><td colspan="4" class="snip"><b>Contributors</b></td></tr>
+<tr>
+<td width="2"><img src="cmn/empty.gif" border="0" width="2" height="2"></td>
+<td width="1" bgcolor="#333333"><img src="cmn/empty.gif" border="0" width="1" height="1"></td>
+<td width="3"><img src="cmn/empty.gif" border="0" width="2" height="2"></td>
+<td width="150" class="snip"><a href="mailto:erik@bosrup.com" class="snip" onmouseover="return overlib('Send e-mail to Erik Bosrup.');" onmouseout="return nd();">Erik Bosrup</a><br></td>
+</tr>
+</table><br><br><table width="156" cellpadding="0" cellspacing="0">
+<tr><td colspan="4" class="snip"><b>Status</b></td></tr>
+<tr>
+<td width="2"><img src="cmn/empty.gif" border="0" width="2" height="2"></td>
+<td width="1" bgcolor="#333333"><img src="cmn/empty.gif" border="0" width="1" height="1"></td>
+<td width="3"><img src="cmn/empty.gif" border="0" width="2" height="2"></td>
+<td width="150" class="snip">
+								overLIB version: 3.51<br>
+								Document version: 1.1<br>
+								Created: 2001-07-08<br>
+								Changed: 2002-11-01<br></td>
+</tr>
+</table><br><br><script src="http://rcm.amazon.com/e/cm?t=thebesite&amp;l=rc1&amp;p=2&amp;o=1" type="text/JavaScript"></script><noscript>
+<table border="0" cellpadding="0" cellspacing="0" width="125">
+<tr><td>
+<map name="boxmap">
+<area alt="Amazon" shape="RECT" coords="18, 263, 105, 274" href="http://rcm.amazon.com/e/cm/privacy-policy.html?o=1">
+<area alt="Amazon" coords="0,0,10000,10000" href="http://www.amazon.com/exec/obidos/redirect-home/thebesite">
+</map><img src="http://rcm-images.amazon.com/images/G/01/associates/amzn_recommends/gnbox125x275.gif" width="125" height="275" border="0" usemap="#boxmap"></td></tr>
+</table>
+</noscript>
+</td>
+</tr>
+</table><br><br>
+
+		Copyright Erik Bosrup 2001-2002. All rights reserved.
+
+		<br><br><font size="1" color="white"><a target="_top" href="http://extreme-dm.com/s/?tag=ol2t"><img name="im" src="http://extreme-dm.com/i/" height="38" width="41" border="0"></a><script></script><script language="javascript1.2"></script><script></script><noscript><img src="http://extreme-dm.com/z/?tag=ol2t&amp;j=n" height="1" width="1"></noscript></font>
+</body>
+</html>
+
