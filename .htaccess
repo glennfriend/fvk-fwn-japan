@@ -1,0 +1,10 @@
+RedirectMatch 404 /\\.svn(/|$)
+RedirectMatch 404 /\\.git(/|$)
+Options -Indexes
+
+############################################
+## developer mode
+##      $_SERVER['DEVELOPER_MODE']
+
+    SetEnvIf Host "localhost" DEVELOPER_MODE=1
+    SetEnvIf Host "training"  DEVELOPER_MODE=1
